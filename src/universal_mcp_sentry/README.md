@@ -1,10 +1,10 @@
-# ApiReferenceApp MCP Server
+# SentryApp MCP Server
 
-An MCP Server for the ApiReferenceApp API.
+An MCP Server for the SentryApp API.
 
 ## 🛠️ Tool List
 
-This is automatically generated from OpenAPI schema for the ApiReferenceApp API.
+This is automatically generated from OpenAPI schema for the SentryApp API.
 
 
 | Tool | Description |
