@@ -2,10 +2,10 @@ from typing import Any
 from universal_mcp.applications import APIApplication
 from universal_mcp.integrations import Integration
 
-class ApiReferenceApp(APIApplication):
+class SentryApp(APIApplication):
     def __init__(self, integration: Integration = None, **kwargs) -> None:
-        super().__init__(name='apireferenceapp', integration=integration, **kwargs)
-        self.base_url = "https://{region}.sentry.io"
+        super().__init__(name='sentry', integration=integration, **kwargs)
+        self.base_url = "https://us.sentry.io"
 
     def list_your_organizations(self, owner=None, cursor=None, query=None, sortBy=None) -> list[Any]:
         """
@@ -21,7 +21,7 @@ class ApiReferenceApp(APIApplication):
             list[Any]: API response data.
 
         Tags:
-            Users
+            Users, important
         """
         url = f"{self.base_url}/api/0/organizations/"
         query_params = {k: v for k, v in [('owner', owner), ('cursor', cursor), ('query', query), ('sortBy', sortBy)] if v is not None}
@@ -41,7 +41,7 @@ class ApiReferenceApp(APIApplication):
             dict[str, Any]: API response data.
 
         Tags:
-            Organizations
+            Organizations, important
         """
         if organization_id_or_slug is None:
             raise ValueError("Missing required parameter 'organization_id_or_slug'")
